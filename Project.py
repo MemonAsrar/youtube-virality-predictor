@@ -7,7 +7,8 @@ from sklearn.metrics import accuracy_score, classification_report
 
 df = pd.read_csv("Youtube_Data.csv", encoding='latin1')
 
-df['post_date'] = pd.to_datetime(df['post_date'], format='%d-%b-%y', errors='coerce')
+df['post_date'] = pd.to_datetime(df['post_date'],
+ format='%d-%b-%y', errors='coerce')
 
 current_date = pd.to_datetime(datetime.now().date())  # Use the current date
 df['video_age'] = (current_date - df['post_date']).dt.days

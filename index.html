@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>YouTube ML Model</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='/css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="{{ url_for('static', filename='/css2/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">PROJECT</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <center><h1 class="header center orange-text">YouTube Video Analyzer</h1></center>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability of Video Going Viral</h5>
+      </div>
+
+      <form action="/predict" method="post" class="col s12">
+        <div class="row">
+          <div class="input-field col s4">
+            <input placeholder="Views in Number" name="views" id="views" type="text" class="validate" aria-label="Enter number of views">
+            <!-- <label for="views"><b>Views</b></label> -->
+          </div>
+          <div class="input-field col s4">
+            <input id="likes" name="likes" placeholder="Likes in Number" type="text" class="validate" aria-label="Enter number of likes">
+            <!-- <label for="likes"><b>Likes</b></label> -->
+          </div>
+          <div class="input-field col s4">
+            <input id="post_date" name="post_date" placeholder="Post Date (dd-MMM-yy)" type="text" class="validate" aria-label="Enter post date in format dd-MMM-yy">
+            <!-- <label for="post_date"><b>Post Date</b></label> -->
+          </div>
+          <div class="input-field col s4">
+            <input id="video_title_length" name="video_title_length" placeholder="Video Title Length" type="text" class="validate" aria-label="Enter video title length">
+            <!-- <label for="video_title_length"><b>Length</b></label> -->
+          </div>
+        </div>
+
+        <div class="row center">
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+        </div>
+      </form>
+      <div class="row center">
+        <p><H1>{{pred}}</H1><br><H3>{{bhai}}</H3></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project for an internship.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Instagram Links</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.instagram.com/memon_asrar_0007?igsh=MTd4eW0yNGo4ZG9xNA==">Memon Asrar</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/modi_vraj__?igsh=MzRlODBiNWFlZA==">Modi Vraj</a></li>
+            <li><a class="white-text" href="https://www.instagram.com/panchalyash.47?igsh=MzRlODBiNWFlZA==">Panchal Yash</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Members</h5>
+          <ul>
+            <li><a class="white-text" href="tel:9023945167">9023945167</a></li>
+            <li><a class="white-text" href="tel:8200185564">8200185564</a></li>
+            <li><a class="white-text" href="tel:9106355843">9106355843</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="#">Goku and Gojo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{ url_for('static', filename='static/js/materialize.js') }}"></script>
+  <script src="{{ url_for('static', filename='static/js/init.js') }}"></script>
+
+</body>
+</html>

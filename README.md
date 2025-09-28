@@ -23,3 +23,10 @@ based on video metadata.
 ---
 
 ## 📂 Project Structure
+youtube-virality-predictor/
+├─ app.py # Main Flask app
+├─ model.pkl # Trained Random Forest model
+├─ static/ # CSS/JS files
+├─ templates/ # HTML templates
+├─ data/ # Sample dataset or CSV logs
+└─ requirements.txt # Dependencies
